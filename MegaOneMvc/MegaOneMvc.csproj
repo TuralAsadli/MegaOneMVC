@@ -1,0 +1,82 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\js\bootstrap-input-spinner.js" />
+    <None Include="wwwroot\js\bootstrap.min.js.map" />
+    <None Include="wwwroot\js\bundle.min.js" />
+    <None Include="wwwroot\js\circle-progress.min.js" />
+    <None Include="wwwroot\js\contact_us.js" />
+    <None Include="wwwroot\js\date.js" />
+    <None Include="wwwroot\js\Drift.min.js" />
+    <None Include="wwwroot\js\extensions\revolution.addon.snow.min.js" />
+    <None Include="wwwroot\js\extensions\revolution.extension.actions.min.js" />
+    <None Include="wwwroot\js\extensions\revolution.extension.beforeafter.min.js" />
+    <None Include="wwwroot\js\extensions\revolution.extension.carousel.min.js" />
+    <None Include="wwwroot\js\extensions\revolution.extension.kenburn.min.js" />
+    <None Include="wwwroot\js\extensions\revolution.extension.layeranimation.min.js" />
+    <None Include="wwwroot\js\extensions\revolution.extension.migration.min.js" />
+    <None Include="wwwroot\js\extensions\revolution.extension.navigation.min.js" />
+    <None Include="wwwroot\js\extensions\revolution.extension.parallax.min.js" />
+    <None Include="wwwroot\js\extensions\revolution.extension.slideanims.min.js" />
+    <None Include="wwwroot\js\extensions\revolution.extension.video.min.js" />
+    <None Include="wwwroot\js\flip.js" />
+    <None Include="wwwroot\js\hover-item.js" />
+    <None Include="wwwroot\js\isotope.pkgd.min.js" />
+    <None Include="wwwroot\js\jquery-countTo.js" />
+    <None Include="wwwroot\js\jquery-ui.bundle.js" />
+    <None Include="wwwroot\js\jquery.appear.js" />
+    <None Include="wwwroot\js\jquery.cubeportfolio.min.js" />
+    <None Include="wwwroot\js\jquery.fancybox.min.js" />
+    <None Include="wwwroot\js\jquery.hoverdir.js" />
+    <None Include="wwwroot\js\jquery.themepunch.revolution.min.js" />
+    <None Include="wwwroot\js\jquery.themepunch.tools.min.js" />
+    <None Include="wwwroot\js\map.js" />
+    <None Include="wwwroot\js\maps.min.js" />
+    <None Include="wwwroot\js\mediaelement-and-player.min.js" />
+    <None Include="wwwroot\js\megamenu.js" />
+    <None Include="wwwroot\js\modernizr.custom.97074.js" />
+    <None Include="wwwroot\js\morphext.min.js" />
+    <None Include="wwwroot\js\owl.carousel.min.js" />
+    <None Include="wwwroot\js\parallaxie.min.js" />
+    <None Include="wwwroot\js\particles.min.js" />
+    <None Include="wwwroot\js\script.js" />
+    <None Include="wwwroot\js\select2.min.js" />
+    <None Include="wwwroot\js\site.js" />
+    <None Include="wwwroot\js\slick.min.js" />
+    <None Include="wwwroot\js\stickyfill.min.js" />
+    <None Include="wwwroot\js\swiper.min.js" />
+    <None Include="wwwroot\js\swiper.min.js.map" />
+    <None Include="wwwroot\js\tilt.jquery.min.js" />
+    <None Include="wwwroot\js\tooltipster.min.js" />
+    <None Include="wwwroot\js\TweenMax.min.js" />
+    <None Include="wwwroot\js\wow.js" />
+    <None Include="wwwroot\js\wow.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="FluentValidation" Version="11.5.2" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Manage\Data\" />
+    <Folder Include="Areas\Manage\Models\" />
+    <Folder Include="wwwroot\img\HoverImgs\" />
+  </ItemGroup>
+
+</Project>
