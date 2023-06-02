@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+wAMJJviWcG06Jp3b2YNpM0JDazDE9jP0xtzDJNu6JE=",
+  "Hash": "KX5U55V2cFmBvdwU5/PdGXcmqyaJLjXQzX6nK/2YKys=",
   "Source": "MegaOneMvc",
   "BasePath": "_content/MegaOneMvc",
   "Mode": "Default",
@@ -3721,6 +3721,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\gallery-img9.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Tural\\source\\repos\\MegaOneMvc\\MegaOneMvc\\wwwroot\\img\\HoverImgs\\b06cc434-34be-4b97-bdc0-fd493bfcfa21cwewccwec.jpg",
+      "SourceId": "MegaOneMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Tural\\source\\repos\\MegaOneMvc\\MegaOneMvc\\wwwroot\\",
+      "BasePath": "_content/MegaOneMvc",
+      "RelativePath": "img/HoverImgs/b06cc434-34be-4b97-bdc0-fd493bfcfa21cwewccwec.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\HoverImgs\\b06cc434-34be-4b97-bdc0-fd493bfcfa21cwewccwec.jpg"
     },
     {
       "Identity": "C:\\Users\\Tural\\source\\repos\\MegaOneMvc\\MegaOneMvc\\wwwroot\\img\\logo.png",

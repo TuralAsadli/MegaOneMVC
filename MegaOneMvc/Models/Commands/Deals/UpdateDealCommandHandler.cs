@@ -26,12 +26,12 @@ namespace MegaOneMvc.Models.Commands.Deals
 
             if (res.ImgPath != null)
             {
-                ImgExtention.DeleteImgFile(Path.Combine(_env.WebRootPath, "images", "hoverImg", res.ImgPath));
+                ImgExtention.DeleteImgFile(Path.Combine(_env.WebRootPath, "img", "FoodHoverImg", res.ImgPath));
             }
             res = _mapper.Map<Deal>(request);
 
             string imgName = request.ImgFile.RenameImg();
-            request.ImgFile.CreateImgFile(Path.Combine(_env.WebRootPath, "images", "hoverImg", imgName));
+            request.ImgFile.CreateImgFile(Path.Combine(_env.WebRootPath, "img", "FoodHoverImg", imgName));
             res.ImgPath = imgName;
 
             await _baseRepository.Update(res);

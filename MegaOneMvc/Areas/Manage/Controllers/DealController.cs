@@ -1,28 +1,28 @@
-﻿using FluentValidation;
+﻿using MediatR;
 using MegaOneMvc.Abstractions.Services;
-using MegaOneMvc.Models;
+using MegaOneMvc.Models.Commands.Deals;
+using MegaOneMvc.Models.Queries.Deals;
 using MegaOneMvc.Utilites.FileExtension;
 using MegaOneMvc.Utilites.Validators;
-using MegaOneMvc.ViewModels.Category;
-using MegaOneMvc.ViewModels.Deal;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MegaOneMvc.Areas.Manage.Controllers
 {
     public class DealController : Controller
     {
-        IDealService _db;
-        DealValidator _validator;
+        
 
-        public DealController(IDealService db)
+        IMediator _mediator;
+
+        public DealController(IMediator mediator)
         {
-            _db = db;
-            _validator = new DealValidator();
+            _mediator = mediator;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var res = await _mediator.Send(new GetAllDealsQuery());
+            return View(res);
         }
 
         public IActionResult CreateDeal()
@@ -31,25 +31,26 @@ namespace MegaOneMvc.Areas.Manage.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateDealAsync(CreateDealVM dealVM)
+        public async Task<IActionResult> CreateDeal(CreateDealCommand deal)
         {
-            var res = _validator.Validate(dealVM);
+            CreateDealCommandValidator validator = new CreateDealCommandValidator();
+            var res = validator.Validate(deal);
             if (!res.IsValid)
             {
                 foreach (var error in res.Errors)
                 {
                     ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
                 }
-                return View(dealVM);
+                return View(deal);
             }
 
-            if (!dealVM.ImgFile.CheckImgFileType())
+            if (!deal.ImgFile.CheckImgFileType())
             {
                 ModelState.AddModelError("ImageFile", "Incorrect file type");
                 return View();
             }
 
-            await _db.CreateAsync(dealVM);
+            await _mediator.Send(deal);
 
             return RedirectToAction(nameof(Index));
         }
@@ -59,46 +60,50 @@ namespace MegaOneMvc.Areas.Manage.Controllers
         {
             if (Guid.TryParse(id, out Guid guid))
             {
-                await _db.DeleteAsync(guid);
+                await _mediator.Send(new DeleteDealCommand() { Id = guid });
                 return RedirectToAction(nameof(Index));
             }
-            return RedirectToAction(nameof(Index));
+            return NotFound();
         }
 
-        public async Task<IActionResult> GetCategories()
+        public async Task<IActionResult> GetDeals()
         {
-            return View(await _db.GetAll());
+            return View(await _mediator.Send(new GetAllDealsQuery()));
         }
 
-        public async Task<IActionResult> UpdateCategory(string id)
+        public async Task<IActionResult> UpdateDeal(string id)
         {
             if (!Guid.TryParse(id, out Guid guid))
             {
                 return RedirectToAction(nameof(Index));
             }
-            return View(await _db.GetById(guid));
+            return View(await _mediator.Send(new GetDealQuery() { Id = guid }));
         }
 
 
         [HttpPut]
-        public async Task<IActionResult> UpdateCategory(string Id, CreateDealVM DealVM)
+        public async Task<IActionResult> UpdateDeal(string Id, UpdateDealCommand Deal)
         {
             if (!Guid.TryParse(Id, out Guid guid))
             {
                 return RedirectToAction(nameof(Index));
             }
 
-            var res = _validator.Validate(DealVM);
+            UpdateDealCommandValidator validator = new UpdateDealCommandValidator();
+
+            var res = validator.Validate(Deal);
             if (!res.IsValid)
             {
                 foreach (var error in res.Errors)
                 {
                     ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
                 }
-                return View(DealVM);
+                return View(Deal);
             }
 
-            await _db.UpdateAsync(guid, DealVM);
+            Deal.Id = guid;
+
+            await _mediator.Send(Deal);
 
             return RedirectToAction(nameof(Index));
         }

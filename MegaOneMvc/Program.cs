@@ -18,6 +18,7 @@ builder.Services.AddMediatR(typeof(Program).Assembly);
 builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<IBaseRepository<Category>, BaseRepository<Category>>();
+builder.Services.AddScoped<IBaseRepository<Deal>, BaseRepository<Deal>>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 
