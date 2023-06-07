@@ -12,6 +12,13 @@ namespace MegaOneMvc.Models.Commands.Foods
         private readonly IMapper _mapper;
         private readonly IWebHostEnvironment _env;
 
+        public UpdateFoodCommandHandler(IBaseRepository<Deal> baseRepository, IMapper mapper, IWebHostEnvironment env)
+        {
+            _baseRepository = baseRepository;
+            _mapper = mapper;
+            _env = env;
+        }
+
         public async Task<Unit> Handle(UpdateFoodCommand request, CancellationToken cancellationToken)
         {
             var res = await _baseRepository.FindAsyncById(request.Id);

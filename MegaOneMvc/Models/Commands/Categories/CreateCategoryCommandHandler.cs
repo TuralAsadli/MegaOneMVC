@@ -22,9 +22,7 @@ namespace MegaOneMvc.Models.Entities.Commands.Categories
         public async Task<Unit> Handle(CreateCategoryCommand command, CancellationToken cancellationToken)
         {
             var category = _mapper.Map<Category>(command);
-            string imgName = command.ImageFile.RenameImg();
-            command.ImageFile.CreateImgFile(Path.Combine(_env.WebRootPath, "img", "HoverImgs", imgName));
-            category.ImgPath = imgName;
+            
 
             await _baseRepository.Create(category);
 

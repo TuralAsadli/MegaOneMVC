@@ -76,8 +76,8 @@
   <ItemGroup>
     <Folder Include="Areas\Manage\Data\" />
     <Folder Include="Areas\Manage\Models\" />
+    <Folder Include="wwwroot\img\FoodHoverImgs\" />
     <Folder Include="wwwroot\img\HoverImgs\" />
-    <Folder Include="wwwroot\img\FoodHoverImg\" />
   </ItemGroup>
 
 </Project>

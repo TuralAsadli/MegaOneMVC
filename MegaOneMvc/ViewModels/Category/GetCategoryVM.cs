@@ -2,8 +2,8 @@
 {
     public class GetCategoryVM
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string CategoryName { get; set; }
-        public string ImgPath { get; set; }
+        public string IconName { get; set; }
     }
 }

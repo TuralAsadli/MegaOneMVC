@@ -18,7 +18,7 @@ namespace MegaOneMvc.Models.Queries.Categories
         }
         public async Task<IEnumerable<GetCategoryVM>> Handle(GetAllCategoryQuery request, CancellationToken cancellationToken)
         {
-            var res = await _baseRepository.GetAll();
+            var res = await _baseRepository.GetAll(c => c.Foods);
             List<GetCategoryVM> categoryVMs = new();
             foreach (var item in res)
             {

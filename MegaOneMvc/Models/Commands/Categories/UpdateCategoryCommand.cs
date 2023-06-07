@@ -8,6 +8,6 @@ namespace MegaOneMvc.Models.Commands.Categories
         public Guid Id { get; set; }
 
         public string CategoryName { get; set; }
-        public IFormFile ImageFile { get; set; }
+        public string IconName { get; set; }
     }
 }

@@ -1,4 +1,9 @@
-﻿using MegaOneMvc.Models;
+﻿using MediatR;
+using MegaOneMvc.Models;
+using MegaOneMvc.Models.Queries.Categories;
+using MegaOneMvc.Models.Queries.Deals;
+using MegaOneMvc.Models.Queries.Foods;
+using MegaOneMvc.ViewModels.Food;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,15 +12,28 @@ namespace MegaOneMvc.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        readonly IMediator _medator;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IMediator medator)
         {
             _logger = logger;
+            _medator = medator;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var categories = await _medator.Send(new GetAllCategoryQuery());
+            var Foods = await _medator.Send(new GetAllFoodQuery());
+            var deals = await _medator.Send(new GetAllDealsQuery());
+            GetAllModelsVM foodsWithCategories = new GetAllModelsVM()
+            {
+                Foods = Foods.ToList(),
+                Categories = categories,
+                Deals = deals
+                
+            };
+            
+            return View(foodsWithCategories);
         }
 
 

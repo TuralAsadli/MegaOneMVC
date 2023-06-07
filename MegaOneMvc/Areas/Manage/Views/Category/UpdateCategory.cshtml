@@ -18,19 +18,11 @@
                     <span asp-validation-for="CategoryName"></span>
                 </div>
 
-
                 <div class="form-group">
-                    <label asp-for="ImageFile">File upload</label>
-                    <input asp-for="ImageFile" class="file-upload-default">
-                    <div class="input-group col-xs-12">
-                        <input asp-for="ImageFile" class="form-control file-upload-info" disabled="" placeholder="Upload Image">
-                        <span class="input-group-append">
-                            <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                        </span>
-                    </div>
-                    <span style="color:red" asp-validation-for="ImageFile"></span>
+                    <label asp-for="IconName">Icon Name</label>
+                    <input asp-for="IconName" type="text" class="form-control" placeholder="Icon">
+                    <span asp-validation-for="IconName"></span>
                 </div>
-
 
                 <button type="submit" class="btn btn-primary me-2">Submit</button>
                 <button class="btn btn-light">Cancel</button>

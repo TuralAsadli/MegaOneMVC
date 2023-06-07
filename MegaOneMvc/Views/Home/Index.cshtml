@@ -1,9 +1,11 @@
-﻿@{
+﻿@using MegaOneMvc.ViewModels.Category
+@using MegaOneMvc.ViewModels.Food
+@{
     ViewData["Title"] = "Home Page";
 }
 
 
-
+@model GetAllModelsVM
 <!--Our Menu-->
 <section class="bg-light" id="menu">
     <div class="container">
@@ -43,7 +45,7 @@
                 </div>
                 <div class="feature-item mb-0 mb-xs-0">
                     <div class="food-features-icon">
-                        <span class="icon"><i class="lni-delivery"></i></span>
+                        <i class="lni-chef-hat"></i>
                     </div>
                     <div class="features-content">
                         <p class="feature-para">100% Free Delivery</p>
@@ -74,441 +76,83 @@
         </div>
         <div class="row justify-content-center">
 
-
+            @{
+                var tab = "tab";
+            }
             <div class="tab-to-accordion">
-            <ul class="tabset-list d-flex justify-content-center justify-content-sm-between align-items-center mb-5 text-center flex-column flex-sm-row">
-                <li class="icon-up breakfast mb-4 mb-sm-0"><a href="#tab1">
-                    <div class="bg-light-grey icon-font pb-10">
-                    <div class="icon bg-light-grey"><i class="lni-teabag"></i></div>
-                </div>
-                    <h3 class="bg-light-grey text-capitalize">Breakfast</h3></a>
-                </li>
-                <li class="active icon-up mb-4 mb-sm-0"><a href="#tab2"><div class=" bg-light-grey icon-font pb-10">
-                    <div class="icon bg-light-grey"><i class="lni-chef-hat"></i></div>
-                </div>
-                    <h3 class="bg-light-grey text-capitalize">Lunch</h3></a>
-                </li>
-                <li class="icon-up dinner"><a href="#tab3"><div class=" bg-light-grey icon-font pb-10">
-                    <div class="icon bg-light-grey"><i class="lni-dinner"></i></div>
-                </div>
-                    <h3 class="bg-light-grey text-capitalize dinner">Dinner</h3></a>
-                </li>
-            </ul>
+                <ul class="tabset-list d-flex justify-content-center justify-content-sm-between align-items-center mb-5 text-center flex-column flex-sm-row">
+                    @foreach (var category in Model.Categories)
+                    {
+                        
+                        var result = $"#tab{category.CategoryName.Replace(" ", "")}";
+                        
+                        <li class="icon-up breakfast mb-4 mb-sm-0"><a href="@result">
+                                <div class="bg-light-grey icon-font pb-10">
+                                <div class="icon bg-light-grey"><i class="@category.IconName"></i></div>
+                            </div>
+                            <h3 class="bg-light-grey text-capitalize">@category.CategoryName</h3></a>
+                        </li>
+                    }
+                    
+                </ul>
 
                 <div class="tab-container">
-                    <div id="tab1">
+                    @foreach (var category in Model.Categories)
+                    {
+                        var result = $"tab{category.CategoryName.Replace(" ", "")}";
+                        <div id="@result">
                         <div class="d-flex justify-content-lg-between flex-column flex-lg-row">
                             <div class="mt-30 da-thumbs food-menu">
-                                <div class="menu-price mr-0 mr-lg-5">
-                                    <div class="overlay"></div>
-                                    <div class="d-flex justify-content-between pt-20">
-                                        <div class="position-relative food-menu-list">
-                                            <p class="text-capitalize menu-heading mb-10">Toasted jam</p>
-                                            <p class="mb-4">survived not only five centuries but the leap</p>
-                                        </div>
-                                        <div>
-                                            <div class="text-gradient price2 mr-2 mt-10"><span class="price text-gradient">$</span> 22.00</div>
-                                        </div>
-                                    </div>
-                                    <span class="hr-line"></span>
-                                </div>
-                                <div class="menu-price mr-0 mr-lg-5">
-                                    <div class="overlay"></div>
-                                    <div class="d-flex justify-content-between pt-20">
-                                        <div class="position-relative food-menu-list">
-                                            <p class="text-capitalize menu-heading mb-10">Prawns butter garlic</p>
-                                            <p class="mb-4">Donec eget augue at diam euismod viverra</p>
-                                        </div>
-                                        <div>
-                                            <div class="text-gradient price2 mr-2 mt-2"><span class="price text-gradient">$</span>39.00</div>
-                                        </div>
-                                    </div>
-                                    <span class="hr-line"></span>
-                                </div>
-                                <div class="menu-price mr-0 mr-lg-5">
-                                    <div class="overlay"></div>
-                                    <div class="d-flex justify-content-between pt-20">
-                                        <div class="position-relative food-menu-list">
-                                            <p class="text-capitalize menu-heading mb-10">Plain pancakes</p>
-                                            <p class="mb-4">Phasellus a ex accumsan, sollicitudin</p>
-                                        </div>
-                                        <div>
-                                            <div class="text-gradient price2 mr-2 mt-2"><span class="price text-gradient">$</span>60.00</div>
-                                        </div>
-                                    </div>
-                                    <span class="hr-line"></span>
-                                </div>
-                                <div class="menu-price mr-0 mr-lg-5">
-                                    <div class="overlay"></div>
-                                    <div class="d-flex justify-content-between pt-20">
-                                        <div class="position-relative food-menu-list">
-                                            <p class="text-capitalize menu-heading mb-10">Ultimate organic fruit salad</p>
-                                            <p class="mb-4">Phasellus a ex accumsan, sollicitudin</p>
-                                        </div>
-                                        <div>
-                                            <div class="text-gradient price2 mr-2 mt-2"><span class="price text-gradient">$</span> 68.00</div>
-                                        </div>
-                                    </div>
-                                    <span class="hr-line"></span>
-                                </div>
-                                <div class="menu-price mr-0 mr-lg-5">
-                                    <div class="overlay"></div>
-                                    <div class="d-flex justify-content-between pt-20">
-                                        <div class="position-relative food-menu-list">
-                                            <p class="text-capitalize menu-heading mb-10">Toasted jam</p>
-                                            <p class="mb-4">Phasellus a ex accumsan, sollicitudin</p>
-                                        </div>
-                                        <div>
-                                            <div class="text-gradient price2 mr-2 mt-2"><span class="price text-gradient">$</span> 85.00</div>
-                                        </div>
-                                    </div>
-                                </div>
+                                @for (int i = 0; i < Model.Foods.Where(f => f.Category.CategoryName == category.CategoryName).Count(); i++)
+                                {
+                                    @if (i / 2 == 1)
+                                        {
+                                            <div class="menu-price mr-0 mr-lg-5">
+                                                <div class="overlay"></div>
+                                                <div class="d-flex justify-content-between pt-20">
+                                                    <div class="position-relative food-menu-list">
+                                                        <p class="text-capitalize menu-heading mb-10">@Model.Foods.ElementAt(i).FoodName</p>
+                                                        <p class="mb-4">@Model.Foods.ElementAt(i).Description</p>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-gradient price2 mr-2 mt-10"><span class="price text-gradient">$</span> @Model.Foods.ElementAt(i).Price</div>
+                                                    </div>
+                                                </div>
+                                                <span class="hr-line"></span>
+                                            </div>
+                                        } 
+                                }
+                                
                             </div>
 
                             <div class="mt-30 ml-lg-5 da-thumbs food-menu">
-                                <div class="menu-price">
-                                    <div class="overlay"></div>
-                                    <div class="d-flex justify-content-between pt-20">
-                                        <div class="position-relative food-menu-list">
-                                            <p class="text-capitalize menu-heading mb-10">Plain pancakes</p>
-                                            <p class="mb-4">survived not only five centuries but the leap</p>
-                                        </div>
-                                        <div>
-                                            <div class="text-gradient price2 mr-2 mt-10"><span class="price text-gradient">$</span>68.00</div>
-                                        </div>
-                                    </div>
-                                    <span class="hr-line"></span>
-                                </div>
-                                <div class="menu-price">
-                                    <div class="overlay"></div>
-                                    <div class="d-flex justify-content-between pt-20">
-                                        <div class="position-relative food-menu-list">
-                                            <p class="text-capitalize menu-heading mb-10">Toasted jam</p>
-                                            <p class="mb-4">Donec eget augue at diam euismod viverra</p>
-                                        </div>
-                                        <div>
-                                            <div class="text-gradient price2 mr-2 mt-10"><span class="price text-gradient">$</span> 50.00</div>
-                                        </div>
-                                    </div>
-                                    <span class="hr-line"></span>
-                                </div>
-                                <div class="menu-price">
-                                    <div class="overlay"></div>
-                                    <div class="d-flex justify-content-between pt-20">
-                                        <div class="position-relative food-menu-list">
-                                            <p class="text-capitalize menu-heading mb-10">Sode kadai</p>
-                                            <p class="mb-4">Phasellus a ex accumsan, sollicitudin</p>
-                                        </div>
-                                        <div>
-                                            <div class="text-gradient price2 mr-2 mt-10"><span class="price text-gradient">$</span>49.00</div>
-                                        </div>
-                                    </div>
-                                    <span class="hr-line"></span>
-                                </div>
-                                <div class="menu-price">
-                                    <div class="overlay"></div>
-                                    <div class="d-flex justify-content-between pt-20">
-                                        <div class="position-relative food-menu-list">
-                                            <p class="text-capitalize menu-heading mb-10">Ultimate organic fruit salad</p>
-                                            <p class="mb-4">Phasellus a ex accumsan, sollicitudin</p>
-                                        </div>
-                                        <div>
-                                            <div class="text-gradient price2 mr-2 mt-10"><span class="price text-gradient">$</span> 22.00</div>
-                                        </div>
-                                    </div>
-                                    <span class="hr-line"></span>
-                                </div>
-                                <div class="menu-price">
-                                    <div class="overlay"></div>
-                                    <div class="d-flex justify-content-between pt-20">
-                                        <div class="position-relative food-menu-list">
-                                            <p class="text-capitalize menu-heading mb-10">Surmai chilli</p>
-                                            <p class="mb-4">Phasellus a ex accumsan, sollicitudin</p>
-                                        </div>
-                                        <div>
-                                            <div class="text-gradient price2 mr-2 mt-10"><span class="price text-gradient">$</span> 39.00</div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
+                                @for (int i = 0; i < Model.Foods.Where(f => f.Category.CategoryName == category.CategoryName).Count(); i++)
+                                {
+                                    @if (i / 2 == 0)
+                                    {
+                                           <div class="menu-price">
+                                                <div class="overlay"></div>
+                                                <div class="d-flex justify-content-between pt-20">
+                                                    <div class="position-relative food-menu-list">
+                                                        <p class="text-capitalize menu-heading mb-10">@Model.Foods.ElementAt(i).FoodName</p>
+                                                        <p class="mb-4">@Model.Foods.ElementAt(i).Description</p>
+                                                    </div>
+                                                    <div>
+                                                        <div class="text-gradient price2 mr-2 mt-10"><span class="price text-gradient">$</span>@Model.Foods.ElementAt(i).Price</div>
+                                                    </div>
+                                                </div>
+                                                <span class="hr-line"></span>
+                                           </div>  
+                                    }
+                                       
+                                }
                             </div>
                         </div>
                     </div>
-                    <div id="tab2">
-                        <div class="d-flex justify-content-lg-between flex-column flex-lg-row">
-                            <div class="mt-30 da-thumbs food-menu">
-                                <div class="menu-price mr-0 mr-lg-5">
-                                    <div class="overlay"></div>
-                                    <div class="d-flex justify-content-between pt-20">
-                                        <div class="position-relative food-menu-list">
-                                            <p class="text-capitalize menu-heading mb-10">Plain pancakes</p>
-                                            <p class="mb-4">survived not only five centuries but the leap</p>
-                                        </div>
-                                        <div>
-                                            <div class="text-gradient price2 mr-2 mt-10"><span class="price text-gradient">$</span> 60.00</div>
-                                        </div>
-                                    </div>
-                                    <span class="hr-line"></span>
-                                </div>
-                                <div class="menu-price mr-0 mr-lg-5">
-                                    <div class="overlay"></div>
-                                    <div class="d-flex justify-content-between pt-20">
-                                        <div class="position-relative food-menu-list">
-                                            <p class="text-capitalize menu-heading mb-10">Ultimate organic fruit salad</p>
-                                            <p class="mb-4">Donec eget augue at diam euismod viverra</p>
-                                        </div>
-                                        <div>
-                                            <div class="text-gradient price2 mr-2 mt-2"><span class="price text-gradient">$</span> 68.00</div>
-                                        </div>
-                                    </div>
-                                    <span class="hr-line"></span>
-                                </div>
-                                <div class="menu-price mr-0 mr-lg-5">
-                                    <div class="overlay"></div>
-                                    <div class="d-flex justify-content-between pt-20">
-                                        <div class="position-relative food-menu-list">
-                                            <p class="text-capitalize menu-heading mb-10">Toasted jam</p>
-                                            <p class="mb-4">Phasellus a ex accumsan, sollicitudin</p>
-                                        </div>
-                                        <div>
-                                            <div class="text-gradient price2 mr-2 mt-2"><span class="price text-gradient">$</span> 22.00</div>
-                                        </div>
-                                    </div>
-                                    <span class="hr-line"></span>
-                                </div>
-                                <div class="menu-price mr-0 mr-lg-5">
-                                    <div class="overlay"></div>
-                                    <div class="d-flex justify-content-between pt-20">
-                                        <div class="position-relative food-menu-list">
-                                            <p class="text-capitalize menu-heading mb-10">Prawns butter garlic</p>
-                                            <p class="mb-4">Phasellus a ex accumsan, sollicitudin</p>
-                                        </div>
-                                        <div>
-                                            <div class="text-gradient price2 mr-2 mt-2"><span class="price text-gradient">$</span> 39.00</div>
-                                        </div>
-                                    </div>
-                                    <span class="hr-line"></span>
-                                </div>
-                                <div class="menu-price mr-0 mr-lg-5">
-                                    <div class="overlay"></div>
-                                    <div class="d-flex justify-content-between pt-20">
-                                        <div class="position-relative food-menu-list">
-                                            <p class="text-capitalize menu-heading mb-10">Toasted jam</p>
-                                            <p class="mb-4">Phasellus a ex accumsan, sollicitudin</p>
-                                        </div>
-                                        <div>
-                                            <div class="text-gradient price2 mr-2 mt-2"><span class="price text-gradient">$</span> 85.00</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mt-30 ml-lg-5 da-thumbs food-menu">
-                                <div class="menu-price">
-                                    <div class="overlay"></div>
-                                    <div class="d-flex justify-content-between pt-20">
-                                        <div class="position-relative food-menu-list">
-                                            <p class="text-capitalize menu-heading mb-10">Toasted jam</p>
-                                            <p class="mb-4">survived not only five centuries but the leap</p>
-                                        </div>
-                                        <div>
-                                            <div class="text-gradient price2 mr-2 mt-10"><span class="price text-gradient">$</span> 50.00</div>
-                                        </div>
-                                    </div>
-                                    <span class="hr-line"></span>
-                                </div>
-                                <div class="menu-price">
-                                    <div class="overlay"></div>
-                                    <div class="d-flex justify-content-between pt-20">
-                                        <div class="position-relative food-menu-list">
-                                            <p class="text-capitalize menu-heading mb-10">Plain pancakes</p>
-                                            <p class="mb-4">Donec eget augue at diam euismod viverra</p>
-                                        </div>
-                                        <div>
-                                            <div class="text-gradient price2 mr-2 mt-10"><span class="price text-gradient">$</span> 68.00</div>
-                                        </div>
-                                    </div>
-                                    <span class="hr-line"></span>
-                                </div>
-                                <div class="menu-price">
-                                    <div class="overlay"></div>
-                                    <div class="d-flex justify-content-between pt-20">
-                                        <div class="position-relative food-menu-list">
-                                            <p class="text-capitalize menu-heading mb-10">Ultimate organic fruit salad</p>
-                                            <p class="mb-4">Phasellus a ex accumsan, sollicitudin</p>
-                                        </div>
-                                        <div>
-                                            <div class="text-gradient price2 mr-2 mt-10"><span class="price text-gradient">$</span> 22.00</div>
-                                        </div>
-                                    </div>
-                                    <span class="hr-line"></span>
-                                </div>
-                                <div class="menu-price">
-                                    <div class="overlay"></div>
-                                    <div class="d-flex justify-content-between pt-20">
-                                        <div class="position-relative food-menu-list">
-                                            <p class="text-capitalize menu-heading mb-10">Surmai chilli</p>
-                                            <p class="mb-4">Phasellus a ex accumsan, sollicitudin</p>
-                                        </div>
-                                        <div>
-                                            <div class="text-gradient price2 mr-2 mt-10"><span class="price text-gradient">$</span> 39.00</div>
-                                        </div>
-                                    </div>
-                                    <span class="hr-line"></span>
-                                </div>
-                                <div class="menu-price">
-                                    <div class="overlay"></div>
-                                    <div class="d-flex justify-content-between pt-20">
-                                        <div class="position-relative food-menu-list">
-                                            <p class="text-capitalize menu-heading mb-10">Sode kadai</p>
-                                            <p class="mb-4">Phasellus a ex accumsan, sollicitudin</p>
-                                        </div>
-                                        <div>
-                                            <div class="text-gradient price2 mr-2 mt-10"><span class="price text-gradient">$</span> 49.00</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="tab3">
-                        <div class="d-flex justify-content-lg-between flex-column flex-lg-row">
-                            <div class="mt-30 da-thumbs food-menu">
-                                <div class="menu-price mr-0 mr-lg-5">
-                                    <div class="overlay"></div>
-                                    <div class="d-flex justify-content-between pt-20">
-                                        <div class="position-relative food-menu-list">
-                                            <p class="text-capitalize menu-heading mb-10">Surmai chilli</p>
-                                            <p class="mb-4">survived not only five centuries but the leap</p>
-                                        </div>
-                                        <div>
-                                            <div class="text-gradient price2 mr-2 mt-10"><span class="price text-gradient">$</span> 39.00</div>
-                                        </div>
-                                    </div>
-                                    <span class="hr-line"></span>
-                                </div>
-                                <div class="menu-price mr-0 mr-lg-5">
-                                    <div class="overlay"></div>
-                                    <div class="d-flex justify-content-between pt-20">
-                                        <div class="position-relative food-menu-list">
-                                            <p class="text-capitalize menu-heading mb-10">Ultimate organic fruit salad</p>
-                                            <p class="mb-4">Donec eget augue at diam euismod viverra</p>
-                                        </div>
-                                        <div>
-                                            <div class="text-gradient price2 mr-2 mt-2"><span class="price text-gradient">$</span> 68.00</div>
-                                        </div>
-                                    </div>
-                                    <span class="hr-line"></span>
-                                </div>
-                                <div class="menu-price mr-0 mr-lg-5">
-                                    <div class="overlay"></div>
-                                    <div class="d-flex justify-content-between pt-20">
-                                        <div class="position-relative food-menu-list">
-                                            <p class="text-capitalize menu-heading mb-10">Sode kadai</p>
-                                            <p class="mb-4">Phasellus a ex accumsan, sollicitudin</p>
-                                        </div>
-                                        <div>
-                                            <div class="text-gradient price2 mr-2 mt-2"><span class="price text-gradient">$</span> 49.00</div>
-                                        </div>
-                                    </div>
-                                    <span class="hr-line"></span>
-                                </div>
-                                <div class="menu-price mr-0 mr-lg-5">
-                                    <div class="overlay"></div>
-                                    <div class="d-flex justify-content-between pt-20">
-                                        <div class="position-relative food-menu-list">
-                                            <p class="text-capitalize menu-heading mb-10">Prawns butter garlic</p>
-                                            <p class="mb-4">Phasellus a ex accumsan, sollicitudin</p>
-                                        </div>
-                                        <div>
-                                            <div class="text-gradient price2 mr-2 mt-2"><span class="price text-gradient">$</span> 39.00</div>
-                                        </div>
-                                    </div>
-                                    <span class="hr-line"></span>
-                                </div>
-                                <div class="menu-price mr-0 mr-lg-5">
-                                    <div class="overlay"></div>
-                                    <div class="d-flex justify-content-between pt-20">
-                                        <div class="position-relative food-menu-list">
-                                            <p class="text-capitalize menu-heading mb-10">Toasted jam</p>
-                                            <p class="mb-4">Phasellus a ex accumsan, sollicitudin</p>
-                                        </div>
-                                        <div>
-                                            <div class="text-gradient price2 mr-2 mt-2"><span class="price text-gradient">$</span> 85.00</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mt-30 ml-lg-5 da-thumbs food-menu">
-                                <div class="menu-price">
-                                    <div class="overlay"></div>
-                                    <div class="d-flex justify-content-between pt-20">
-                                        <div class="position-relative food-menu-list">
-                                            <p class="text-capitalize menu-heading mb-10">Toasted jam</p>
-                                            <p class="mb-4">survived not only five centuries but the leap</p>
-                                        </div>
-                                        <div>
-                                            <div class="text-gradient price2 mr-2 mt-10"><span class="price text-gradient">$</span> 39.00</div>
-                                        </div>
-                                    </div>
-                                    <span class="hr-line"></span>
-                                </div>
-                                <div class="menu-price">
-                                    <div class="overlay"></div>
-                                    <div class="d-flex justify-content-between pt-20">
-                                        <div class="position-relative food-menu-list">
-                                            <p class="text-capitalize menu-heading mb-10">Ultimate organic fruit salad</p>
-                                            <p class="mb-4">Donec eget augue at diam euismod viverra</p>
-                                        </div>
-                                        <div>
-                                            <div class="text-gradient price2 mr-2 mt-10"><span class="price text-gradient">$</span> 85.00</div>
-                                        </div>
-                                    </div>
-                                    <span class="hr-line"></span>
-                                </div>
-                                <div class="menu-price">
-                                    <div class="overlay"></div>
-                                    <div class="d-flex justify-content-between pt-20">
-                                        <div class="position-relative food-menu-list">
-                                            <p class="text-capitalize menu-heading mb-10">Plain pancakes</p>
-                                            <p class="mb-4">Phasellus a ex accumsan, sollicitudin</p>
-                                        </div>
-                                        <div>
-                                            <div class="text-gradient price2 mr-2 mt-10"><span class="price text-gradient">$</span> 66.00</div>
-                                        </div>
-                                    </div>
-                                    <span class="hr-line"></span>
-                                </div>
-                                <div class="menu-price">
-                                    <div class="overlay"></div>
-                                    <div class="d-flex justify-content-between pt-20">
-                                        <div class="position-relative food-menu-list">
-                                            <p class="text-capitalize menu-heading mb-10">Surmai chilli</p>
-                                            <p class="mb-4">Phasellus a ex accumsan, sollicitudin</p>
-                                        </div>
-                                        <div>
-                                            <div class="text-gradient price2 mr-2 mt-10"><span class="price text-gradient">$</span> 50.00</div>
-                                        </div>
-                                    </div>
-                                    <span class="hr-line"></span>
-                                </div>
-                                <div class="menu-price">
-                                    <div class="overlay"></div>
-                                    <div class="d-flex justify-content-between pt-20">
-                                        <div class="position-relative food-menu-list">
-                                            <p class="text-capitalize menu-heading mb-10">Toasted jam</p>
-                                            <p class="mb-4">Phasellus a ex accumsan, sollicitudin</p>
-                                        </div>
-                                        <div>
-                                            <div class="text-gradient price2 mr-2 mt-10"><span class="price text-gradient">$</span> 22.00</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    }
                 </div>
-        </div>
+            </div>
         </div>
     </div>
 </section>
@@ -842,102 +486,25 @@
                     </div>
                     <div class="row">
                         <div id="deal-slider" class="owl-carousel owl-theme">
-                        <div class="item item-deal">
-                            <!--Deal Item-->
-                            <div class="mega-deal-item">
-                                <!--Deal Img-->
-                                <div class="deal-img">
-                                    <img src="~/img/deal-img1.jpg" alt="image">
-                                </div>
-                            </div>
-                            <!--Deal Text-->
-                            <p class="deal-text feature-para text-left mt-40 mb-20">Two Person Deal</p>
-                            <p class="text-left deal-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dignissim viverra ultrices.</p>
-                            <!--Deal Price-->
-                            <div>
-                                <div class="text-gradient price2 text-left"><span class="text-gradient">$</span>99</div>
-                            </div>
-                        </div>
-                            <div class="item item-deal">
-                                <!--Deal Item-->
-                                <div class="mega-deal-item">
-                                    <!--Deal Img-->
-                                    <div class="deal-img">
-                                        <img src="~/img/deal-img2.jpg" alt="image">
+                            @foreach (var deal in Model.Deals)
+                            {
+                                <div class="item item-deal">
+                                    <!--Deal Item-->
+                                    <div class="mega-deal-item">
+                                        <!--Deal Img-->
+                                        <div class="deal-img">
+                                            <img src="~/img/HoverImgs/@deal.ImgPath" alt="image">
+                                        </div>
+                                    </div>
+                                    <!--Deal Text-->
+                                    <p class="deal-text feature-para text-left mt-40 mb-20">@deal.DealName</p>
+                                    <p class="text-left deal-para">@deal.Description</p>
+                                    <!--Deal Price-->
+                                    <div>
+                                        <div class="text-gradient price2 text-left"><span class="text-gradient">$</span>@deal.Price</div>
                                     </div>
                                 </div>
-                                <!--Deal Text-->
-                                <p class="deal-text feature-para text-left mt-40 mb-20">Midnight Feast</p>
-                                <p class="text-left deal-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dignissim viverra ultrices.</p>
-                                <!--Deal Price-->
-                                <div>
-                                    <div class="green price2 text-left"><span class="green">$</span>199</div>
-                                </div>
-                            </div>
-                            <div class="item item-deal">
-                                <!--Deal Item-->
-                                <div class="mega-deal-item">
-                                    <!--Deal Img-->
-                                    <div class="deal-img">
-                                        <img src="~/img/deal-img3.jpg" alt="image">
-                                    </div>
-                                </div>
-                                <!--Deal Text-->
-                                <p class="deal-text feature-para text-left mt-40 mb-20">Weekend Brunch</p>
-                                <p class="text-left deal-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dignissim viverra ultrices.</p>
-                                <!--Deal Price-->
-                                <div>
-                                    <div class="text-gradient price2 text-left"><span class="text-gradient">$</span>149</div>
-                                </div>
-                            </div>
-                            <div class="item item-deal">
-                                <!--Deal Item-->
-                                <div class="mega-deal-item">
-                                    <!--Deal Img-->
-                                    <div class="deal-img">
-                                        <img src="~/img/deal-img1.jpg" alt="image">
-                                    </div>
-                                </div>
-                                <!--Deal Text-->
-                                <p class="deal-text feature-para text-left mt-40 mb-20">Two Person Deal</p>
-                                <p class="text-left deal-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dignissim viverra ultrices.</p>
-                                <!--Deal Price-->
-                                <div>
-                                    <div class="text-gradient price2 text-left"><span class="text-gradient">$</span>99</div>
-                                </div>
-                            </div>
-                            <div class="item item-deal">
-                                <!--Deal Item-->
-                                <div class="mega-deal-item">
-                                    <!--Deal Img-->
-                                    <div class="deal-img">
-                                        <img src="~/img/deal-img2.jpg" alt="image">
-                                    </div>
-                                </div>
-                                <!--Deal Text-->
-                                <p class="deal-text feature-para text-left mt-40 mb-20">Midnight Feast</p>
-                                <p class="text-left deal-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dignissim viverra ultrices.</p>
-                                <!--Deal Price-->
-                                <div>
-                                    <div class="green price2 text-left"><span class="green">$</span>199</div>
-                                </div>
-                            </div>
-                            <div class="item item-deal">
-                                <!--Deal Item-->
-                                <div class="mega-deal-item">
-                                    <!--Deal Img-->
-                                    <div class="deal-img">
-                                        <img src="~/img/deal-img3.jpg" alt="image">
-                                    </div>
-                                </div>
-                                <!--Deal Text-->
-                                <p class="deal-text feature-para text-left mt-40 mb-20">Weekend Brunch</p>
-                                <p class="text-left deal-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dignissim viverra ultrices.</p>
-                                <!--Deal Price-->
-                                <div>
-                                    <div class="text-gradient price2 text-left"><span class="text-gradient">$</span>149</div>
-                                </div>
-                            </div>
+                            }
 
                         </div>
                     </div>

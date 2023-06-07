@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MegaOneMvc.Models.Commands.Categories;
 using MegaOneMvc.Models.Commands.Deals;
+using MegaOneMvc.Models.Commands.Foods;
 using MegaOneMvc.Models.Entities;
 using MegaOneMvc.ViewModels.Category;
 using MegaOneMvc.ViewModels.Deal;
@@ -32,6 +33,11 @@ namespace MegaOneMvc.Utilites.Automapper
 
             CreateMap<CreateDealCommand, Deal>();
             CreateMap<UpdateDealCommand, Deal>();
+
+            CreateMap<CreateFoodCommand, Food>();
+            CreateMap<UpdateFoodCommand, Food>();
+
+            CreateMap<UpdateCategoryCommand, GetCategoryVM>();
         }
     }
 }

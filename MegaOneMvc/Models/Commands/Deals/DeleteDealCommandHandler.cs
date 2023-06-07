@@ -7,12 +7,13 @@ namespace MegaOneMvc.Models.Commands.Deals
 {
     public class DeleteDealCommandHandler : IRequestHandler<DeleteDealCommand>
     {
-        readonly IBaseRepository<Category> _baseRepository;
+        readonly IBaseRepository<Deal> _baseRepository;
         private readonly IWebHostEnvironment _env;
 
-        public DeleteDealCommandHandler(IBaseRepository<Category> baseRepository)
+        public DeleteDealCommandHandler(IBaseRepository<Deal> baseRepository, IWebHostEnvironment env)
         {
             _baseRepository = baseRepository;
+            _env = env;
         }
 
         public async Task<Unit> Handle(DeleteDealCommand request, CancellationToken cancellationToken)

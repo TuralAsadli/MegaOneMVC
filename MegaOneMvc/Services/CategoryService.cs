@@ -23,20 +23,12 @@ namespace MegaOneMvc.Services
         public async Task CreateAsync(CreateCategoryVM categoryVM)
         {
             var category = _mapper.Map<Category>(categoryVM);
-            string imgName = categoryVM.ImageFile.RenameImg();
-            categoryVM.ImageFile.CreateImgFile(Path.Combine(_env.WebRootPath, "images", "hoverImg", imgName));
-            category.ImgPath = imgName;
-
             await _db.Create(category);
         }
 
         public async Task DeleteAsync(Guid id)
         {
             var category = await _db.FindAsyncById(id);
-            if (category.ImgPath != null)
-            {
-                ImgExtention.DeleteImgFile(Path.Combine(_env.WebRootPath, "images", "hoverImg", category.ImgPath));
-            }
             await _db.Remove(category);
         }
 
@@ -62,18 +54,7 @@ namespace MegaOneMvc.Services
         public async Task UpdateAsync(Guid id, CreateCategoryVM categoryVM)
         {
             var res = await _db.FindAsyncById(id);
-
-            if (res.ImgPath != null)
-            {
-                ImgExtention.DeleteImgFile(Path.Combine(_env.WebRootPath, "images", "hoverImg", res.ImgPath));
-            }
-
-
             var category = _mapper.Map<Category>(res);
-            string imgName = categoryVM.ImageFile.RenameImg();
-            categoryVM.ImageFile.CreateImgFile(Path.Combine(_env.WebRootPath, "images", "hoverImg", imgName));
-            category.ImgPath = imgName;
-
             await _db.Update(category);
         }
     }

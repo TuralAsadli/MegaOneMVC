@@ -22,7 +22,7 @@ namespace MegaOneMvc.Models.Queries.Foods
 
         public async Task<IEnumerable<GetFoodVM>> Handle(GetAllFoodQuery request, CancellationToken cancellationToken)
         {
-            var res = await _baseRepository.GetAll();
+            var res = await _baseRepository.GetAll(f => f.Category);
             List<GetFoodVM> categoryVMs = new();
             foreach (var item in res)
             {

@@ -27,19 +27,19 @@ namespace MegaOneMvc.Repositories
 
         public async Task<TEntity> FindAsyncById(Guid id)
         {
-            return await _dbSet.FindAsync(id);
+            return await _dbSet.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task<TEntity> FindAsyncById(Guid Id, params Expression<Func<TEntity, object>>[] includes)
         {
-            IQueryable<TEntity> query = _dbSet;
+            IQueryable<TEntity> query = _dbSet.AsNoTracking();
 
             foreach (var include in includes)
             {
                 query = query.Include(include);
             }
 
-            return query.FirstOrDefault(e => e.Id == Id);
+            return await query.FirstOrDefaultAsync(e => e.Id == Id);
         }
 
         public async Task<IQueryable<TEntity>> GetAll(params Expression<Func<TEntity, object>>[] includes)

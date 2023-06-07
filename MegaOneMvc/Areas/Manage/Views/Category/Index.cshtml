@@ -25,6 +25,9 @@
                                 Name
                             </th>
                             <th>
+                                Icon
+                            </th>
+                            <th>
                                 Delete
                             </th>
                             <th>
@@ -41,6 +44,9 @@
                                 </td>
                                 <td>
                                     @item.CategoryName
+                                </td>
+                                <td>
+                                    <span class="icon"><i class="@item.IconName"></i></span>
                                 </td>
                                 <td>
                                     <a type="button" asp-route-id="@item.Id" asp-action="DeleteCategory" asp-controller="Category" class="btn btn-danger">Delete</a>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "KX5U55V2cFmBvdwU5/PdGXcmqyaJLjXQzX6nK/2YKys=",
+  "Hash": "JS9Y/ldNNGH5PaGii3T4RkrlKJpymIuMQeAuUxwyzc8=",
   "Source": "MegaOneMvc",
   "BasePath": "_content/MegaOneMvc",
   "Mode": "Default",
@@ -3536,6 +3536,23 @@
       "OriginalItemSpec": "wwwroot\\img\\food-comingsoon.jpg"
     },
     {
+      "Identity": "C:\\Users\\Tural\\source\\repos\\MegaOneMvc\\MegaOneMvc\\wwwroot\\img\\FoodHoverImgs\\095fbccc-62a6-46ac-a5da-6df12375272ecwewccwec.jpg",
+      "SourceId": "MegaOneMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Tural\\source\\repos\\MegaOneMvc\\MegaOneMvc\\wwwroot\\",
+      "BasePath": "_content/MegaOneMvc",
+      "RelativePath": "img/FoodHoverImgs/095fbccc-62a6-46ac-a5da-6df12375272ecwewccwec.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\FoodHoverImgs\\095fbccc-62a6-46ac-a5da-6df12375272ecwewccwec.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Tural\\source\\repos\\MegaOneMvc\\MegaOneMvc\\wwwroot\\img\\gallery-img1.jpg",
       "SourceId": "MegaOneMvc",
       "SourceType": "Discovered",
@@ -3723,12 +3740,12 @@
       "OriginalItemSpec": "wwwroot\\img\\gallery-img9.jpg"
     },
     {
-      "Identity": "C:\\Users\\Tural\\source\\repos\\MegaOneMvc\\MegaOneMvc\\wwwroot\\img\\HoverImgs\\b06cc434-34be-4b97-bdc0-fd493bfcfa21cwewccwec.jpg",
+      "Identity": "C:\\Users\\Tural\\source\\repos\\MegaOneMvc\\MegaOneMvc\\wwwroot\\img\\HoverImgs\\1f5596bf-6507-41d4-ba9a-f0733d1c55794-48410_m.jpg",
       "SourceId": "MegaOneMvc",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Tural\\source\\repos\\MegaOneMvc\\MegaOneMvc\\wwwroot\\",
       "BasePath": "_content/MegaOneMvc",
-      "RelativePath": "img/HoverImgs/b06cc434-34be-4b97-bdc0-fd493bfcfa21cwewccwec.jpg",
+      "RelativePath": "img/HoverImgs/1f5596bf-6507-41d4-ba9a-f0733d1c55794-48410_m.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -3737,7 +3754,41 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\HoverImgs\\b06cc434-34be-4b97-bdc0-fd493bfcfa21cwewccwec.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\HoverImgs\\1f5596bf-6507-41d4-ba9a-f0733d1c55794-48410_m.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Tural\\source\\repos\\MegaOneMvc\\MegaOneMvc\\wwwroot\\img\\HoverImgs\\41278273-2308-429c-aa5e-1671a31944b94-48410_m.jpg",
+      "SourceId": "MegaOneMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Tural\\source\\repos\\MegaOneMvc\\MegaOneMvc\\wwwroot\\",
+      "BasePath": "_content/MegaOneMvc",
+      "RelativePath": "img/HoverImgs/41278273-2308-429c-aa5e-1671a31944b94-48410_m.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\HoverImgs\\41278273-2308-429c-aa5e-1671a31944b94-48410_m.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Tural\\source\\repos\\MegaOneMvc\\MegaOneMvc\\wwwroot\\img\\HoverImgs\\bd89071f-739c-4b0c-9a95-ea5b2327065e28263c1565e9859e0fcf08886d9c5c33.jpg",
+      "SourceId": "MegaOneMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Tural\\source\\repos\\MegaOneMvc\\MegaOneMvc\\wwwroot\\",
+      "BasePath": "_content/MegaOneMvc",
+      "RelativePath": "img/HoverImgs/bd89071f-739c-4b0c-9a95-ea5b2327065e28263c1565e9859e0fcf08886d9c5c33.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\HoverImgs\\bd89071f-739c-4b0c-9a95-ea5b2327065e28263c1565e9859e0fcf08886d9c5c33.jpg"
     },
     {
       "Identity": "C:\\Users\\Tural\\source\\repos\\MegaOneMvc\\MegaOneMvc\\wwwroot\\img\\logo.png",

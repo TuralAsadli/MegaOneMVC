@@ -1,6 +1,8 @@
 ﻿using MediatR;
 using MegaOneMvc.Abstractions.Services;
+using MegaOneMvc.Models.Commands.Categories;
 using MegaOneMvc.Models.Commands.Deals;
+using MegaOneMvc.Models.Queries.Categories;
 using MegaOneMvc.Models.Queries.Deals;
 using MegaOneMvc.Utilites.FileExtension;
 using MegaOneMvc.Utilites.Validators;
@@ -8,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MegaOneMvc.Areas.Manage.Controllers
 {
+    [Area("Manage")]
     public class DealController : Controller
     {
         
@@ -66,10 +69,7 @@ namespace MegaOneMvc.Areas.Manage.Controllers
             return NotFound();
         }
 
-        public async Task<IActionResult> GetDeals()
-        {
-            return View(await _mediator.Send(new GetAllDealsQuery()));
-        }
+        
 
         public async Task<IActionResult> UpdateDeal(string id)
         {
@@ -77,11 +77,20 @@ namespace MegaOneMvc.Areas.Manage.Controllers
             {
                 return RedirectToAction(nameof(Index));
             }
-            return View(await _mediator.Send(new GetDealQuery() { Id = guid }));
+            var res = await _mediator.Send(new GetDealQuery() { Id = guid });
+            UpdateDealCommand updateDeal = new UpdateDealCommand()
+            {
+                Id = res.Id,
+                DealName = res.DealName,
+                Description = res.Description,
+                Price = res.Price
+
+            };
+            return View(updateDeal);
         }
 
 
-        [HttpPut]
+        [HttpPost]
         public async Task<IActionResult> UpdateDeal(string Id, UpdateDealCommand Deal)
         {
             if (!Guid.TryParse(Id, out Guid guid))

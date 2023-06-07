@@ -21,7 +21,6 @@ namespace MegaOneMvc.Models.Commands.Categories
             var res = await _baseRepository.FindAsyncById(request.Id);
             if (res != null)
             {
-                ImgExtention.DeleteImgFile(Path.Combine(_env.WebRootPath, "img", "HoverImg", res.ImgPath));
                 await _baseRepository.Remove(res);
             }
             

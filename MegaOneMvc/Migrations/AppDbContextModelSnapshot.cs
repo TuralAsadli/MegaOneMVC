@@ -22,7 +22,7 @@ namespace MegaOneMvc.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("MegaOneMvc.Models.Category", b =>
+            modelBuilder.Entity("MegaOneMvc.Models.Entities.Category", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -32,7 +32,7 @@ namespace MegaOneMvc.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImgPath")
+                    b.Property<string>("IconName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -41,17 +41,17 @@ namespace MegaOneMvc.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("MegaOneMvc.Models.Deal", b =>
+            modelBuilder.Entity("MegaOneMvc.Models.Entities.Deal", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("DealDescription")
+                    b.Property<string>("DealName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("DealName")
+                    b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -67,7 +67,7 @@ namespace MegaOneMvc.Migrations
                     b.ToTable("Deals");
                 });
 
-            modelBuilder.Entity("MegaOneMvc.Models.Food", b =>
+            modelBuilder.Entity("MegaOneMvc.Models.Entities.Food", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -84,6 +84,10 @@ namespace MegaOneMvc.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ImgPath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
@@ -94,15 +98,20 @@ namespace MegaOneMvc.Migrations
                     b.ToTable("Foods");
                 });
 
-            modelBuilder.Entity("MegaOneMvc.Models.Food", b =>
+            modelBuilder.Entity("MegaOneMvc.Models.Entities.Food", b =>
                 {
-                    b.HasOne("MegaOneMvc.Models.Category", "Category")
-                        .WithMany()
+                    b.HasOne("MegaOneMvc.Models.Entities.Category", "Category")
+                        .WithMany("Foods")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("MegaOneMvc.Models.Entities.Category", b =>
+                {
+                    b.Navigation("Foods");
                 });
 #pragma warning restore 612, 618
         }

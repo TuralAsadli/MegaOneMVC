@@ -19,6 +19,7 @@ builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(builder.Conf
 
 builder.Services.AddScoped<IBaseRepository<Category>, BaseRepository<Category>>();
 builder.Services.AddScoped<IBaseRepository<Deal>, BaseRepository<Deal>>();
+builder.Services.AddScoped<IBaseRepository<Food>, BaseRepository<Food>>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 
@@ -43,7 +44,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
             name: "areas",
-            pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+            pattern: "{area:exists}/{controller=Category}/{action=Index}/{id?}"
           );
 
 app.MapControllerRoute(

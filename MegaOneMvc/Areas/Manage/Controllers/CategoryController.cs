@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 using MegaOneMvc.Abstractions.Services;
 using MegaOneMvc.Models.Commands.Categories;
 using MegaOneMvc.Models.Queries.Categories;
@@ -12,13 +13,14 @@ namespace MegaOneMvc.Areas.Manage.Controllers
     public class CategoryController : Controller
     {
         ICategoryService _db;
-
+        IMapper _mapper;
         IMediator _mediator;
-        public CategoryController(ICategoryService db, IMediator mediator)
+        public CategoryController(ICategoryService db, IMediator mediator, IMapper mapper)
         {
             _db = db;
 
             _mediator = mediator;
+            _mapper = mapper;
         }
         public async Task<IActionResult> Index()
         {
@@ -34,11 +36,7 @@ namespace MegaOneMvc.Areas.Manage.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateCategory(CreateCategoryCommand createCategory)
         {
-            if (!createCategory.ImageFile.CheckImgFileType())
-            {
-                ModelState.AddModelError("ImageFile", "Incorrect file type");
-                return View();
-            }
+            
 
             CreateCategoryCommandValidator validator = new CreateCategoryCommandValidator();
             var res = validator.Validate(createCategory);
@@ -59,7 +57,7 @@ namespace MegaOneMvc.Areas.Manage.Controllers
         {
             if (Guid.TryParse(id, out Guid guid))
             {
-                await _mediator.Send(new DeleteCategoryCommand());
+                await _mediator.Send(new DeleteCategoryCommand() { Id = guid});
                 return RedirectToAction(nameof(Index));
             }
             return NotFound();
@@ -72,10 +70,17 @@ namespace MegaOneMvc.Areas.Manage.Controllers
             {
                 return RedirectToAction(nameof(Index));
             }
-            return View(await _mediator.Send(new GetCategoryQuery() { Id = guid }));
+            var res = await _mediator.Send(new GetCategoryQuery() { Id = guid });
+            UpdateCategoryCommand updateCategoryCommand = new UpdateCategoryCommand()
+            {
+                Id = res.Id,
+                CategoryName = res.CategoryName,
+                IconName = res.IconName
+            };
+            return View(updateCategoryCommand);
         }
 
-        [HttpPut]
+        [HttpPost]
         public async Task<IActionResult> UpdateCategory(string Id, UpdateCategoryCommand Category)
         {
             if (!Guid.TryParse(Id, out Guid guid))
