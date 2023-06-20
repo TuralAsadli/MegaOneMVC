@@ -5,7 +5,7 @@
 }
 
 
-@model GetAllModelsVM
+@model IndexPageVm
 <!--Our Menu-->
 <section class="bg-light" id="menu">
     <div class="container">
@@ -302,50 +302,23 @@
             </div>
 
          <div class="row m-0">
-                <!-- gallery item -->
-                <div class="col-md-2 items web">
-                    <div class="item-img">
-                        <a href="food/img/gallery-img1.jpg" data-fancybox="images">
-                            <img src="~/img/gallery-img1.jpg" alt="image">
-                            <div class="item-img-overlay valign">
-                                <div class="overlay-info text-center">
-                                    <span class="dinner-hover mb-3 gradient-bg1"><i class="lni-dinner"></i></span>
-                                    <h5 class="text-white">Egg Special</h5>
+                
+                @foreach (var item in Model.Foods)
+                {
+                    <div class="col-md-3 items graphic" height="330px" width="440px">
+                        <div class="item-img">
+                            <a href="food/img/@item.ImgPath" data-fancybox="images">
+                                <img src="~/img/FoodHoverImgs/@item.ImgPath" alt="image" height="330px" width="440px">
+                                <div class="item-img-overlay valign">
+                                    <div class="overlay-info text-center">
+                                        <span class="dinner-hover mb-3 gradient-bg1"><i class="lni-dinner"></i></span>
+                                        <h5 class="text-white">@item.FoodName</h5>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     </div>
-                </div>
-
-                <!-- gallery item -->
-                <div class="col-md-8 items web">
-                    <div class="item-img">
-                        <a href="food/img/gallery-img2.jpg" data-fancybox="images">
-                            <img src="~/img/gallery-img2.jpg" alt="image">
-                            <div class="item-img-overlay valign">
-                                <div class="overlay-info text-center">
-                                    <span class="dinner-hover mb-3 gradient-bg1"><i class="lni-dinner"></i></span>
-                                    <h5 class="text-white">Grill Beef</h5>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- gallery item -->
-                <div class="col-md-2 items web">
-                    <div class="item-img">
-                        <a href="food/img/gallery-img3.jpg" data-fancybox="images">
-                            <img src="~/img/gallery-img3.jpg" alt="image">
-                            <div class="item-img-overlay valign">
-                                <div class="overlay-info text-center">
-                                    <span class="dinner-hover mb-3 gradient-bg1"><i class="lni-dinner"></i></span>
-                                    <h5 class="text-white">Chicken Veggie Bread</h5>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                }
 
                 <!-- gallery item -->
                 <div class="col-md-3 items graphic brand">
@@ -675,18 +648,18 @@
                     <div class="book-table">
                         <h2 class="table-booking mb-30">Book a <span class="text-gradient"> Table</span></h2>
                     </div>
-                    <form class="contact-form" id="contact-form-data">
+                    <form method="post" class="contact-form">
                         <div class="row">
                             <div class="col-sm-12" id="result"></div>
                             <div class="col-md-6 mb-3">
-                                <input type="text" name="userName" class=" form-control m-mb-20" placeholder="Your Name">
+                                <input name="Name" class=" form-control m-mb-20" placeholder="Your Name">
                             </div>
                             <div class="col-md-6 mb-3">
-                                <input type="email" name="userEmail" class=" form-control m-mb-20" placeholder="Your Email">
+                                <input name="Email" class=" form-control m-mb-20" placeholder="Your Email">
                             </div>
                             <div class="col-md-6 mb-3">
                                 <div class="position-relative m-mb-20">
-                                    <input type="text" id="my-date" name="reservationDate" placeholder="12 / 01 / 2020" class=" form-control datepicker">
+                                    <input name="Date" placeholder="@DateTime.Now.ToString("dd-MM-yyyy")" class=" form-control datepicker">
                                     <label for="my-date"  class="position-absolute m-label pointer-none">
                                         <span class="calender-line"></span>
                                         <i class="fa fa-caret-down"></i>
@@ -696,7 +669,7 @@
 
                             <div class="col-md-6 mb-3">
                                 <div class="position-relative mb-20">
-                                    <select title="" class=" js-example-basic-single" name="reserveTime">
+                                    <select name="Hour" title="" class=" js-example-basic-single" >
                                         <option value="7:00">7:00 PM</option>
                                         <option value="8:00">8:00 PM</option>
                                         <option value="9:00">9:00 PM</option>
@@ -714,7 +687,7 @@
                                 </div>
                                 </div>
                             <div class="col-md-6 text-center text-md-left">
-                                <a href="javascript:void(0);" class="btn btn-green btn-large btn-rounded d-inline-block contact_btn"><i class="fa fa-spinner fa-spin mr-2 d-none" aria-hidden="true"></i> <b>Book Now</b></a>
+                                <button type="submit" class="btn btn-green btn-large btn-rounded d-inline-block contact_btn">Book Now</button>
                             </div>
                         </div>
                     </form>

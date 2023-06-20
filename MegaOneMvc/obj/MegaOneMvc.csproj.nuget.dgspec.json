@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tural\\source\\repos\\MegaOneMvc\\MegaOneMvc\\MegaOneMvc.csproj": {}
+    "E:\\Projects\\MegaOneMvc\\MegaOneMvc\\MegaOneMvc.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tural\\source\\repos\\MegaOneMvc\\MegaOneMvc\\MegaOneMvc.csproj": {
+    "E:\\Projects\\MegaOneMvc\\MegaOneMvc\\MegaOneMvc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tural\\source\\repos\\MegaOneMvc\\MegaOneMvc\\MegaOneMvc.csproj",
+        "projectUniqueName": "E:\\Projects\\MegaOneMvc\\MegaOneMvc\\MegaOneMvc.csproj",
         "projectName": "MegaOneMvc",
-        "projectPath": "C:\\Users\\Tural\\source\\repos\\MegaOneMvc\\MegaOneMvc\\MegaOneMvc.csproj",
+        "projectPath": "E:\\Projects\\MegaOneMvc\\MegaOneMvc\\MegaOneMvc.csproj",
         "packagesPath": "C:\\Users\\Tural\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tural\\source\\repos\\MegaOneMvc\\MegaOneMvc\\obj\\",
+        "outputPath": "E:\\Projects\\MegaOneMvc\\MegaOneMvc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Tural\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -69,6 +69,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.13, )"
+            },
+            "SixLabors.ImageSharp": {
+              "target": "Package",
+              "version": "[3.0.1, )"
             }
           },
           "imports": [

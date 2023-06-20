@@ -30,7 +30,7 @@ namespace MegaOneMvc.Models.Commands.Foods
             res = _mapper.Map<Deal>(request);
 
             string imgName = request.ImgFile.RenameImg();
-            request.ImgFile.CreateImgFile(Path.Combine(_env.WebRootPath, "img", "FoodHoverImg", imgName));
+            request.ImgFile.CropImgAndSave(Path.Combine(_env.WebRootPath, "img", "FoodHoverImg", imgName));
             res.ImgPath = imgName;
 
             await _baseRepository.Update(res);

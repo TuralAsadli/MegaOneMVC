@@ -8,81 +8,85 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MegaOneMvc
 build_property.RootNamespace = MegaOneMvc
-build_property.ProjectDir = C:\Users\Tural\source\repos\MegaOneMvc\MegaOneMvc\
+build_property.ProjectDir = E:\Projects\MegaOneMvc\MegaOneMvc\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Tural\source\repos\MegaOneMvc\MegaOneMvc
+build_property.MSBuildProjectDirectory = E:\Projects\MegaOneMvc\MegaOneMvc
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Tural/source/repos/MegaOneMvc/MegaOneMvc/Areas/Manage/Views/Category/CreateCategory.cshtml]
+[E:/Projects/MegaOneMvc/MegaOneMvc/Areas/Manage/Views/Booking/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEJvb2tpbmdcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Projects/MegaOneMvc/MegaOneMvc/Areas/Manage/Views/Category/CreateCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENhdGVnb3J5XENyZWF0ZUNhdGVnb3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Tural/source/repos/MegaOneMvc/MegaOneMvc/Areas/Manage/Views/Category/Index.cshtml]
+[E:/Projects/MegaOneMvc/MegaOneMvc/Areas/Manage/Views/Category/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENhdGVnb3J5XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Tural/source/repos/MegaOneMvc/MegaOneMvc/Areas/Manage/Views/Category/UpdateCategory.cshtml]
+[E:/Projects/MegaOneMvc/MegaOneMvc/Areas/Manage/Views/Category/UpdateCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENhdGVnb3J5XFVwZGF0ZUNhdGVnb3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Tural/source/repos/MegaOneMvc/MegaOneMvc/Areas/Manage/Views/Deal/CreateDeal.cshtml]
+[E:/Projects/MegaOneMvc/MegaOneMvc/Areas/Manage/Views/Deal/CreateDeal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXERlYWxcQ3JlYXRlRGVhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Tural/source/repos/MegaOneMvc/MegaOneMvc/Areas/Manage/Views/Deal/Index.cshtml]
+[E:/Projects/MegaOneMvc/MegaOneMvc/Areas/Manage/Views/Deal/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXERlYWxcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Tural/source/repos/MegaOneMvc/MegaOneMvc/Areas/Manage/Views/Deal/UpdateDeal.cshtml]
+[E:/Projects/MegaOneMvc/MegaOneMvc/Areas/Manage/Views/Deal/UpdateDeal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXERlYWxcVXBkYXRlRGVhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Tural/source/repos/MegaOneMvc/MegaOneMvc/Areas/Manage/Views/Food/CreateFood.cshtml]
+[E:/Projects/MegaOneMvc/MegaOneMvc/Areas/Manage/Views/Food/CreateFood.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEZvb2RcQ3JlYXRlRm9vZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Tural/source/repos/MegaOneMvc/MegaOneMvc/Areas/Manage/Views/Food/Index.cshtml]
+[E:/Projects/MegaOneMvc/MegaOneMvc/Areas/Manage/Views/Food/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEZvb2RcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Tural/source/repos/MegaOneMvc/MegaOneMvc/Areas/Manage/Views/Home/Index.cshtml]
+[E:/Projects/MegaOneMvc/MegaOneMvc/Areas/Manage/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEhvbWVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Tural/source/repos/MegaOneMvc/MegaOneMvc/Areas/Manage/Views/Shared/_Layout.cshtml]
+[E:/Projects/MegaOneMvc/MegaOneMvc/Areas/Manage/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNoYXJlZFxfTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Tural/source/repos/MegaOneMvc/MegaOneMvc/Areas/Manage/Views/_ViewImports.cshtml]
+[E:/Projects/MegaOneMvc/MegaOneMvc/Areas/Manage/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Tural/source/repos/MegaOneMvc/MegaOneMvc/Areas/Manage/Views/_ViewStart.cshtml]
+[E:/Projects/MegaOneMvc/MegaOneMvc/Areas/Manage/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Tural/source/repos/MegaOneMvc/MegaOneMvc/Views/Home/Index.cshtml]
+[E:/Projects/MegaOneMvc/MegaOneMvc/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Tural/source/repos/MegaOneMvc/MegaOneMvc/Views/Shared/Error.cshtml]
+[E:/Projects/MegaOneMvc/MegaOneMvc/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Tural/source/repos/MegaOneMvc/MegaOneMvc/Views/Shared/_ValidationScriptsPartial.cshtml]
+[E:/Projects/MegaOneMvc/MegaOneMvc/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Tural/source/repos/MegaOneMvc/MegaOneMvc/Views/_ViewImports.cshtml]
+[E:/Projects/MegaOneMvc/MegaOneMvc/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Tural/source/repos/MegaOneMvc/MegaOneMvc/Views/_ViewStart.cshtml]
+[E:/Projects/MegaOneMvc/MegaOneMvc/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Tural/source/repos/MegaOneMvc/MegaOneMvc/Views/Shared/_Layout.cshtml]
+[E:/Projects/MegaOneMvc/MegaOneMvc/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-y7te0qqvus

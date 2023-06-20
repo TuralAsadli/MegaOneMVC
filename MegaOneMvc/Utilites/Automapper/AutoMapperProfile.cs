@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using MegaOneMvc.Models.Commands.Bookings;
 using MegaOneMvc.Models.Commands.Categories;
 using MegaOneMvc.Models.Commands.Deals;
 using MegaOneMvc.Models.Commands.Foods;
@@ -38,6 +39,9 @@ namespace MegaOneMvc.Utilites.Automapper
             CreateMap<UpdateFoodCommand, Food>();
 
             CreateMap<UpdateCategoryCommand, GetCategoryVM>();
+
+            CreateMap<CreateBookingCommand, Booking>();
+            CreateMap<UpdateBookingCommand, Booking>();
         }
     }
 }

@@ -22,12 +22,12 @@ namespace MegaOneMvc.Models.Commands.Foods
 
         public async Task<Unit> Handle(CreateFoodCommand request, CancellationToken cancellationToken)
         {
-            var deal = _mapper.Map<Food>(request);
+            var food = _mapper.Map<Food>(request);
             string imgName = request.ImgFile.RenameImg();
-            request.ImgFile.CreateImgFile(Path.Combine(_env.WebRootPath, "img", "FoodHoverImgs", imgName));
-            deal.ImgPath = imgName;
+            request.ImgFile.CropImgAndSave(Path.Combine(_env.WebRootPath, "img", "FoodHoverImgs", imgName));
+            food.ImgPath = imgName;
 
-            await _baseRepository.Create(deal);
+            await _baseRepository.Create(food);
 
             return Unit.Value;
         }

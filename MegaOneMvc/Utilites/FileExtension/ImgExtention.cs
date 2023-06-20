@@ -1,4 +1,6 @@
-﻿namespace MegaOneMvc.Utilites.FileExtension
+﻿using SixLabors.ImageSharp;
+
+namespace MegaOneMvc.Utilites.FileExtension
 {
     public static class ImgExtention
     {
@@ -18,6 +20,21 @@
             using (FileStream fs = new FileStream(path, FileMode.Create))
             {
                 file.CopyTo(fs);
+            }
+        }
+
+        public static void CropImgAndSave(this IFormFile file, string path)
+        {
+            
+            // Process the uploaded image file
+            using (var image = Image.Load(file.OpenReadStream()))
+            {
+                // Crop the image based on the specified dimensions
+                image.Mutate(x => x.Resize(440,330));
+
+                // Save the cropped image to disk or perform further processing
+                string croppedFilePath = path;
+                image.Save(croppedFilePath);
             }
         }
 

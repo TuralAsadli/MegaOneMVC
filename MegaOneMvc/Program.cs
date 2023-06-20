@@ -20,6 +20,7 @@ builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(builder.Conf
 builder.Services.AddScoped<IBaseRepository<Category>, BaseRepository<Category>>();
 builder.Services.AddScoped<IBaseRepository<Deal>, BaseRepository<Deal>>();
 builder.Services.AddScoped<IBaseRepository<Food>, BaseRepository<Food>>();
+builder.Services.AddScoped<IBaseRepository<Booking>, BaseRepository<Booking>>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 
