@@ -1,95 +1,45 @@
-# StreamLab
+# Restaurant Website Readme
 
-## Project Description:
-Webflix is a web-based streaming platform that allows users to watch movies and TV shows online. It provides an extensive collection of content across various genres and supports multiple user profiles.
+This repository contains the source code for a restaurant website. The website allows users to explore the menu, check out deals, and make table reservations. It also includes an admin panel for managing products, deals, and reservations.
 
-## Installation Instructions:
-1. Clone the repository: `git clone https://github.com/TuralAsadli/NetflixMvc.git`
-2. Change database connection string in "appsettings.json"
-3. Write in terminal Update-Database to create a database
-4. Start the development server: `dotnet run`
-5. Open your web browser and visit: `http://localhost:3000`
+## Features
 
-## Main Pages
-1. Home
-2. Movies
-3. TvShows
-4. Register
-5. Categories
-6. Contact Us
-7. Log in
-8. Movie Playlist
-9. TvShow Playlist
-10. Buy Subscribe
-11. Search
-12. Admin Panel
+- Menu: Users can browse the menu and view various food and beverage items offered by the restaurant.
+- Deals: Users can find special deals and offers provided by the restaurant.
+- Table Reservation: Users can reserve a table by selecting the desired date, time, and number of guests.
+- Admin Panel: The admin panel provides CRUD operations for managing products, deals, and reservations.
+- Email Notifications: Users who make table reservations receive email notifications with the reservation details.
 
+## Technologies Used
 
-## Usage Examples:
-1. Visit the homepage to browse the available content.
-2. Click on a movie or TV show to view its details and watch it.
-3. Use the search functionality to find specific content.
-4. if you are an admin, you can go to the admin panel and add movies or TV shows
-5. Create a user profile to personalize your experience and access your watchlist.
-6. Add Some Tvshow or Movie to you wachlist.
-7. if you have a complaint about the site, you can write to support in the contact us section
+The project is built using the following technologies:
 
+- ASP.NET Core MVC: The web framework used for developing the application.
+- Mediator: A design pattern for decoupling components and simplifying communication between them.
+- CQRS: A pattern that separates read and write operations to optimize performance and scalability.
+- Entity Framework: An ORM used for database access and management.
+- Fluent Validation: A library for validating input data and enforcing data integrity.
+- AutoMapper: A library for object-to-object mapping.
 
-## Features:
-- Extensive library of movies and TV shows across various genres.
-- User authentication and profile management.
-- Search functionality to find specific content.
-- Watchlist feature to save content for later viewing.
-- Responsive design for optimal viewing experience on different devices.
-- Recommendation system based on user preferences and viewing history.
-- Integration with external APIs for fetching movie and TV show data (OMDb API).
-- Global Exception Handler - if there is an unexpected error in the program, it will automatically show an error 404
-- Subscribe system with payment (Stripe)
+## Getting Started
 
-## Architecture and Patterns:
-StreamLab follows a client-server architecture, with the following components:
+To get started with the project, follow these steps:
 
-1. MVC:
-    #### MVC stands for Model-View-Controller. It is a software architectural pattern commonly used in designing and developing web applications.
-    - In MVC, the "Model" represents the data and business logic of the application. It handles data storage, retrieval, and manipulation.
-    - The "View" is responsible for displaying the user interface, presenting the data to the users in a visually appealing way. 
-    - The "Controller" acts as an intermediary between the Model and the View. It receives user input, processes it, and updates the Model or the View accordingly.
+1. Clone this repository to your local machine.
+2. Open the solution in your preferred IDE (e.g., Visual Studio).
+3. Restore the NuGet packages used in the project.
+4. Set up the database connection string adn account settings in the `appsettings.json` file.
+5. Run the database migrations to create the necessary tables.
+6. Build the project and ensure there are no build errors.
+7. Run the application and access it in your web browser.
 
-2. N-Tier:
-    #### Application consists of 4 layers
-   1. **Interfaces** (Class library, entities's interfaces);
-   2. **DAL** (Class library and Context);
-   3. **BL** (Class library, Business logic, references the two projects above 1 and 2);
-   4. **Web** (ASP.NET MVC application, Presentation Layer, references two projects 1 and 3);
+## Usage
 
-3. Database:
-   - Stores movie and TV show data, user information, and user preferences.
-   - Can be implemented using relational databases like MsSql, MySQL or PostgreSQL.
-   - Ensures data consistency, integrity, and scalability.
-    <div style="display: flex;">
-        <div style="margin: 20px;">
-            <img src="userDbDisign.png" alt="Image Description" width="300px" height="180px" />
-        </div>
-        <div style="margin: 20px;">
-            <img src="MovieDbDesign.png" alt="Image Description" width="300px" height="180px" />
-        </div>
-    </div>
+- As a user, you can visit the website to explore the menu, check out deals, and make table reservations.
+- As an admin, you can log in to the admin panel to manage products, deals, and reservations.
 
-4. Generic Repository:
-    - **CRUD Operations**: The generic repository supports Create, Read, Update, and Delete operations for entities.
-    - **Flexible Entity Types**: You can use the generic repository with various entity types by providing the appropriate type parameter.
-    - **Data Source Agnostic**: The repository is designed to work with different data sources, such as databases, file systems, or external APIs.
+## Contributing
 
-## Contributing:
-Contributions to Webflix are welcome! If you'd like to contribute, please follow these steps:
-1. Fork the repository on GitHub.
-2. Create a new branch with a descriptive name: `git checkout -b my-feature`
-3. Make your changes and test thoroughly.
-4. Commit your changes: `git commit -am 'Add new feature'`
-5. Push the branch to your forked repository: `git push origin my-feature`
-6. Open a pull request on the original repository.
+Contributions to this project are welcome. If you encounter any issues or have suggestions for improvements, please submit an issue or create a pull request.
 
 
-
-## Contact Information:
-For any inquiries or support, please contact Tural Asadli at tural.asadli2003@gmail.com.
