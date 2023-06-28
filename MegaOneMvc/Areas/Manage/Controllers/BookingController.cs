@@ -4,10 +4,13 @@ using MegaOneMvc.Models.Commands.Bookings;
 using MegaOneMvc.Models.Entities;
 using MegaOneMvc.Models.Queries.Bookings;
 using MegaOneMvc.Utilites.Validators;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MegaOneMvc.Areas.Manage.Controllers
 {
+    [Area("Manage")]
+    [Authorize]
     public class BookingController : Controller
     {
         private readonly IBaseRepository<Booking> _repository;

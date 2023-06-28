@@ -84,7 +84,7 @@
                                 </div>
                                 <div class="item-content flex-grow">
                                     <h6 class="ellipsis font-weight-normal">
-                                        Johnson
+                                        @User.Identity.Name
                                     </h6>
                                     <p class="font-weight-light small-text text-muted mb-0">
                                         Upcoming board meeting
@@ -144,14 +144,14 @@
                     <li class="nav-item nav-profile dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
                             <img src="~/area/images/faces/face5.jpg" alt="profile" />
-                            <span class="nav-profile-name">Louis Barnett</span>
+                            <span class="nav-profile-name">@User.Identity.Name</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
                             <a class="dropdown-item">
                                 <i class="mdi mdi-settings text-primary"></i>
                                 Settings
                             </a>
-                            <a class="dropdown-item">
+                            <a class="dropdown-item" asp-area="" asp-action="LogOut" asp-controller="Account">
                                 <i class="mdi mdi-logout text-primary"></i>
                                 Logout
                             </a>
@@ -185,6 +185,7 @@
                                 <li class="nav-item"> <a class="nav-link" asp-action="Index" asp-controller="Category">Categories</a></li>
                                 <li class="nav-item"> <a class="nav-link" asp-action="Index" asp-controller="Deal">Deal</a></li>
                                 <li class="nav-item"> <a class="nav-link" asp-action="Index" asp-controller="Food">Food</a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-action="Index" asp-controller="Booking">Booking</a></li>
                             </ul>
                         </div>
                     </li>

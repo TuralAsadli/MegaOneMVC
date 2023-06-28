@@ -6,6 +6,7 @@ using MegaOneMvc.Models.Entities;
 using MegaOneMvc.Repositories;
 using MegaOneMvc.Services;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -23,6 +24,14 @@ builder.Services.AddScoped<IBaseRepository<Food>, BaseRepository<Food>>();
 builder.Services.AddScoped<IBaseRepository<Booking>, BaseRepository<Booking>>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 
+builder.Services.AddIdentity<User, IdentityRole>(opt =>
+{
+    opt.Password.RequireDigit = true;
+    opt.Password.RequireNonAlphanumeric = false;
+    opt.Password.RequiredLength = 6;
+    opt.User.RequireUniqueEmail = true;
+
+}).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
 
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
@@ -41,7 +50,9 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapControllerRoute(
             name: "areas",

@@ -1,9 +1,10 @@
 ﻿using MegaOneMvc.Models.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace MegaOneMvc.DAL
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext
     {
         public AppDbContext(DbContextOptions options) : base(options)
         {
@@ -16,5 +17,7 @@ namespace MegaOneMvc.DAL
         public DbSet<Category> Categories { get; set; }
 
         public DbSet<Booking> Bookings { get; set; }
+
+        public DbSet<User> Users { get; set; }
     }
 }
