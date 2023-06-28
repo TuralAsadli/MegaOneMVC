@@ -1,4 +1,4 @@
-# Restaurant Website Readme
+# Megaone Website Readme
 
 This repository contains the source code for a restaurant website. The website allows users to explore the menu, check out deals, and make table reservations. It also includes an admin panel for managing products, deals, and reservations.
 
